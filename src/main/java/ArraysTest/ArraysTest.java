@@ -2,6 +2,7 @@ package ArraysTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArraysTest {
@@ -86,5 +87,22 @@ public class ArraysTest {
 
         Integer[] int3 = int2.toArray(new Integer[0]);
         System.out.println("Shows data stored in Array from ArrayList int3 " + Arrays.toString(int3));
+
+        System.out.println("_------------------------ ARR 10 -------------------------------------------");
+        /** Delete element from ArrayList  */
+        ArrayList<String> string1 = new ArrayList<>();
+        string1.add("Basik");
+        string1.add("Tom");
+        string1.add("Jary");
+        string1.add("Murzik");
+        string1.add("Jary");
+        System.out.println("List of cats " + string1);
+
+        Iterator<String> catIterator = string1.iterator();
+        String nextCat = catIterator.next();
+        while(nextCat.equals("Jary")){
+            catIterator.remove();
+        }
+        System.out.println("List of cats " + string1);
     }
 }

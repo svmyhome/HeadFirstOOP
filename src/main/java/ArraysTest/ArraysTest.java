@@ -7,7 +7,7 @@ import java.util.List;
 public class ArraysTest {
     public static void main(String[] args) {
 
-        System.out.println("_------------------------ ARR 1-------------------------------------------");
+        System.out.println("_------------------------ ARR 1 -------------------------------------------");
         ArrayList<String> arr1 = new ArrayList<>();
         System.out.println("Lenght of arr1 " + arr1.size() + "-> " + arr1);
         arr1.add("First");
@@ -27,7 +27,7 @@ public class ArraysTest {
         arr1.clear();
         System.out.println("After clear Lenght of arr1 is " + arr1.size() + "-> " + arr1.toString());
 
-        System.out.println("_------------------------ ARR 2   AND ARR 3-------------------------------------------");
+        System.out.println("_------------------------ ARR 2 and ARR 3 -------------------------------------------");
         ArrayList<String> arr2 = new ArrayList<>();
         arr2.add("Monday");
         arr2.add("Tuesday");
@@ -42,7 +42,7 @@ public class ArraysTest {
         System.out.println(arr2.get(1));
         System.out.println("Lenght of arr1 " + arr1.size() + "-> " + arr1.toString());
 
-        System.out.println("_------------------------ ARR 4   AND ARR 5-------------------------------------------");
+        System.out.println("_------------------------ ARR 4 and ARR 5 -------------------------------------------");
         /** Сравнение двух массивов и удаление элементов не принадлежащих переданной коллекции */
         ArrayList<String> arr4 = new ArrayList<>();
         arr4.add("Gren");
@@ -58,7 +58,7 @@ public class ArraysTest {
         System.out.println("Удаляет элементы, не принадлежащие переданной коллекции: ARR4 " + arr4);
         System.out.println("В Arr5 оставляет все как есть" + arr5);
 
-        System.out.println("_------------------------ ARR 6   AND ARR7-------------------------------------------");
+        System.out.println("_------------------------ ARR 6 and ARR 7 -------------------------------------------");
         /** Сравнение двух массивов и удаление всех элементов, которые есть в обеих коллекциях */
         ArrayList<String> arr6 = new ArrayList<>(20);
         arr6.add("Gren");
@@ -74,5 +74,17 @@ public class ArraysTest {
         System.out.println("Удаляет элементы, принадлежащие обеим коллекциям: ARR6 " + arr6);
         System.out.println("В Arr7 оставляет все как есть" + arr7);
 
+        System.out.println("_------------------------ ARR 8 and ARR 9 -------------------------------------------");
+        /** Copy from Array into ArrayList and copy from ArrayList into Array */
+
+        Integer[] int1 = {1, 2, 3, 4};
+        ArrayList<Integer> int2 = new ArrayList<>();
+        System.out.println("Shows data stored in original Array int1 " + int1);
+        System.out.println("Shows data stored in original ArrayList int2 " + int2);
+        int2 = new ArrayList<>(Arrays.asList(int1));
+        System.out.println("Shows data stored in ArrayList from Array int2 " + int2);
+
+        Integer[] int3 = int2.toArray(new Integer[0]);
+        System.out.println("Shows data stored in Array from ArrayList int3 " + Arrays.toString(int3));
     }
 }
